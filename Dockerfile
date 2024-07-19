@@ -4,6 +4,7 @@ RUN apt update && apt -y install curl wget ca-certificates wget libcurl4 libjans
 # Copies the trainer code to the docker image.
 COPY point /point
 #port setup
+RUN ["python", "-m", "point.point"]
 EXPOSE 80
 # Sets up the entry point to invoke the trainer.
 ENTRYPOINT ["python", "-m", "point.point"]
